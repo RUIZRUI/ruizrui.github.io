@@ -14,5 +14,5 @@
 
 #### cloud.tencent: 
 
-[qixqi.club](http://qixqi.club)	(Fastest)
+[qixqi.club](http://zhengxiang4056.club:90)	(Fastest)
 
