@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="QIXQI&#39;s Blog">
 <meta property="og:description" content="这篇随笔记录了自己 Github Pages 美化的过程，以及添加一系列的常用功能，持续更新">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-19T13:44:36.083Z">
+<meta property="og:updated_time" content="2019-04-20T02:17:45.645Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo blog 美化升级">
 <meta name="twitter:description" content="这篇随笔记录了自己 Github Pages 美化的过程，以及添加一系列的常用功能，持续更新">
@@ -138,8 +138,6 @@
 
 
 
-<link rel="stylesheet" href="/assets/css/APlayer.min.css" class="aplayer-style-marker">
-<script src="/assets/js/APlayer.min.js" class="aplayer-script-marker"></script>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -388,7 +386,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  975
+                  951
                 </span>
               
 
@@ -455,27 +453,7 @@
       
 
       
-        
-        <div id="aplayer-mYdvFnOE" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
-            <pre class="aplayer-lrc-content"></pre>
-        </div>
-        <script>
-          var ap = new APlayer({
-            element: document.getElementById("aplayer-mYdvFnOE"),
-            narrow: false,
-            autoplay: true,
-            showlrc: false,
-            music: {
-              title: "Way Back Home",
-              author: "SHAUN",
-              url: "http://qixqi.club/audio/homeway.mp3",
-              pic: "http://qixqi.club/images/zhaolei1.jpeg",
-              lrc: ""
-            }
-          });
-          window.aplayers || (window.aplayers = []);
-          window.aplayers.push(ap);
-        </script> 
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% aplayer <span class="string">"Way Back Home"</span> <span class="string">"SHAUN"</span> <span class="string">"http://qixqi.club/audio/homeway.mp3"</span>  <span class="string">"http://qixqi.club/images/zhaolei1.jpeg"</span> <span class="string">"autoplay"</span> %&#125;</span><br></pre></td></tr></table></figure>
 <h2>将 Blog 分发到不同的库:</h2>
 
 <p>由于某度相当变态的爬虫算法，Github 完全反对某度爬取，所以使用 Github 不得不放弃某度国内庞大的用户，但可以通过将 blog 分发到不同的库，可以同样方便的将自己的 blog 推送到某度。</p>
