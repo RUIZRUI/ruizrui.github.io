@@ -14,6 +14,13 @@
 
 
 
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
 
 
 
@@ -91,7 +98,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://qixqi.github.io/2019/04/15/hexo/next.png">
 <meta property="og:image" content="https://qixqi.github.io/2019/04/15/hexo/cyanstyle.png">
-<meta property="og:updated_time" content="2019-04-21T09:50:49.694Z">
+<meta property="og:updated_time" content="2019-04-21T12:12:02.109Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Manjaro&#x2F;MacOS 搭建 Github Pages 个人博客">
 <meta name="twitter:description" content="本文主要涉及hexo next建站初期的详细过程，目前暂不包括美化过程，持续更新 ......">
@@ -494,20 +501,24 @@
 <p>找到 mathjax</p>
 <p>修改为  mathjax:</p>
 <p>​         enable: true</p>
+<hr>
 <h2 id="Github-Pages-配置"><a href="#Github-Pages-配置" class="headerlink" title="Github Pages 配置"></a>Github Pages 配置</h2><p>hexo 在本地已经配置好本地服务器，接下来需要在github上创建 repository</p>
 <h3 id="选择New-repository"><a href="#选择New-repository" class="headerlink" title="选择New repository"></a>选择New repository</h3><h3 id="选择repository-name"><a href="#选择repository-name" class="headerlink" title="选择repository name"></a>选择repository name</h3><p>repository name 一般设置为　“username.github.io”, 其中”username” 一般是你的github 用户名，</p>
 <p>选择库名后，在页面底端勾选”Initialize this repository with a README “;</p>
 <p>创建成功后就可以在浏览器中使用 https://用户名.github.io 来访问</p>
+<hr>
 <h2 id="将本地配置的-blog-提交到-Github-Pages"><a href="#将本地配置的-blog-提交到-Github-Pages" class="headerlink" title="将本地配置的 blog 提交到 Github Pages"></a>将本地配置的 blog 提交到 Github Pages</h2><h3 id="Clone-repository"><a href="#Clone-repository" class="headerlink" title="Clone repository"></a>Clone repository</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/username/username.github.io</span><br></pre></td></tr></table></figure>
 <h3 id="生成-index-html"><a href="#生成-index-html" class="headerlink" title="生成 index.html"></a>生成 index.html</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd username.github.io</span><br><span class="line">echo "Hello World" &gt; index.html</span><br></pre></td></tr></table></figure>
 <h3 id="推送本地文件到-Github-Pages"><a href="#推送本地文件到-Github-Pages" class="headerlink" title="推送本地文件到 Github Pages"></a>推送本地文件到 Github Pages</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git add --all</span><br><span class="line">git commit -m "Initial commit"</span><br><span class="line">git config --global user.name "github用户名"</span><br><span class="line">git config --global user.email github邮箱</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
 <p>如果输入　“git push -u origin master” 后邮箱报错，可以到 <a href="https://github.com" target="_blank" rel="noopener">https://github.com</a> 的 “Setting” 中的 “Email” 取消勾选 “Keep my email address private”</p>
+<hr>
 <h2 id="同步本地的-hexo-博客到-github-上"><a href="#同步本地的-hexo-博客到-github-上" class="headerlink" title="同步本地的 hexo 博客到 github 上"></a>同步本地的 hexo 博客到 github 上</h2><h3 id="安装一个扩展"><a href="#安装一个扩展" class="headerlink" title="安装一个扩展"></a>安装一个扩展</h3><p>在 blog 目录下</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
 <h3 id="配置-config-yml"><a href="#配置-config-yml" class="headerlink" title="配置_config.yml"></a>配置_config.yml</h3><p>修改添加</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">type: git</span><br><span class="line">repository: https://github.com/username/username.github.io.git</span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure>
 <h3 id="清除缓存上传-hexo-到-Github-Pages"><a href="#清除缓存上传-hexo-到-Github-Pages" class="headerlink" title="清除缓存上传 hexo 到 Github Pages"></a>清除缓存上传 hexo 到 Github Pages</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
 <p> 这时候在浏览器中输入 https://用户名.github.io 就可以访问博客了</p>
+<hr>
 <h2 id="美化：更换-theme"><a href="#美化：更换-theme" class="headerlink" title="美化：更换 theme"></a>美化：更换 theme</h2><p>CyanStyle 是 Wordpress 的 Twentytwelve 主题在 Hexo 上的迁移，清新简约，个人感觉良好</p>
 <h3 id="clone-hexo-theme-cyanstyle"><a href="#clone-hexo-theme-cyanstyle" class="headerlink" title="clone hexo-theme-cyanstyle"></a>clone hexo-theme-cyanstyle</h3><p>在 blog 目录下</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/wizardforcel/hexo-theme-cyanstyle themes/cyanstyle</span><br></pre></td></tr></table></figure>
@@ -519,7 +530,8 @@
 <p>个人觉得挺好看的</p>
 <h3 id="提交到-Github-Repositories"><a href="#提交到-Github-Repositories" class="headerlink" title="提交到 Github Repositories"></a>提交到 Github Repositories</h3><p>在 blog 目录下</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-<h3 id="浏览器浏览"><a href="#浏览器浏览" class="headerlink" title="浏览器浏览"></a>浏览器浏览</h3><h2 id="新建博文"><a href="#新建博文" class="headerlink" title="新建博文"></a>新建博文</h2><p>主要解决在 hexo 博客中插入图片路径问题</p>
+<h3 id="浏览器浏览"><a href="#浏览器浏览" class="headerlink" title="浏览器浏览"></a>浏览器浏览</h3><hr>
+<h2 id="新建博文"><a href="#新建博文" class="headerlink" title="新建博文"></a>新建博文</h2><p>主要解决在 hexo 博客中插入图片路径问题</p>
 <h3 id="修改-config-yml-1"><a href="#修改-config-yml-1" class="headerlink" title="修改_config.yml"></a>修改_config.yml</h3><p>在 blog 目录下修改 _config.yml 配置文件中的 post_asset_folder: true</p>
 <p>此时在新建博客的时候会自动创建一个文件夹</p>
 <h3 id="安装一个扩展-1"><a href="#安装一个扩展-1" class="headerlink" title="安装一个扩展"></a>安装一个扩展</h3><p>在 blog 目录下执行</p>
@@ -888,7 +900,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     #
-    <span title="Site words total count">2k</span>
+    <span title="Site words total count">2.7k</span>
   
 </div>
 
