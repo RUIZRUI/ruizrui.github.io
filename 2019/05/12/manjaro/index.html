@@ -1,0 +1,1549 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/upload/image/test.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Manjaro,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="QIXQI's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="小白配置 Manjaro 的辛酸历史，自己虽然linux学的不是很高深，但奈何搞坏系统的能力与日俱增，配置 Manjaro 环境也有7~8次了，配置过 xfce桌面、gnome桌面、kde桌面，这里主要是 Manjaro + kde.">
+<meta name="keywords" content="Manjaro">
+<meta property="og:type" content="article">
+<meta property="og:title" content="manjaro 安装后配置">
+<meta property="og:url" content="https://qixqi.github.io/2019/05/12/manjaro/index.html">
+<meta property="og:site_name" content="QIXQI&#39;s Blog">
+<meta property="og:description" content="小白配置 Manjaro 的辛酸历史，自己虽然linux学的不是很高深，但奈何搞坏系统的能力与日俱增，配置 Manjaro 环境也有7~8次了，配置过 xfce桌面、gnome桌面、kde桌面，这里主要是 Manjaro + kde.">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-05-11T16:40:03.205Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="manjaro 安装后配置">
+<meta name="twitter:description" content="小白配置 Manjaro 的辛酸历史，自己虽然linux学的不是很高深，但奈何搞坏系统的能力与日俱增，配置 Manjaro 环境也有7~8次了，配置过 xfce桌面、gnome桌面、kde桌面，这里主要是 Manjaro + kde.">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://qixqi.github.io/2019/05/12/manjaro/">
+
+
+
+
+
+  <title>manjaro 安装后配置 | QIXQI's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <a href="https://github.com/QIXQI" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+     <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">QIXQI's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+           <h1 class="site-subtitle hitokoto" itemprop="description"></h1>
+           <script type="text/javascript" src="https://v1.hitokoto.cn/?encode=js"></script>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://qixqi.github.io/2019/05/12/manjaro/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="QIXQI">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/upload/image/portrait.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="QIXQI's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">manjaro 安装后配置</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-12T00:23:00+08:00">
+                2019-05-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Manjaro/" itemprop="url" rel="index">
+                    <span itemprop="name">Manjaro</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Manjaro/beautify/" itemprop="url" rel="index">
+                    <span itemprop="name">beautify</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  8
+                </span>
+              
+            </div>
+          
+
+          
+            
+              <span class="post-comments-count">
+               <!-- <span class="post-meta-divider">|</span> -->
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/05/12/manjaro/#comments" itemprop="discussionUrl">
+                  <span>评论次数 </span>
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/12/manjaro/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 阅读次数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+
+          
+              <div class="post-description">
+                  小白配置 Manjaro 的辛酸历史，自己虽然linux学的不是很高深，但奈何搞坏系统的能力与日俱增，配置 Manjaro 环境也有7~8次了，配置过 xfce桌面、gnome桌面、kde桌面，这里主要是 Manjaro + kde.
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="同步远程数据包到本地"><a href="#同步远程数据包到本地" class="headerlink" title="同步远程数据包到本地"></a>同步远程数据包到本地</h2><p>没有同步数据包的话，安装软件时可能会出现数据包找不到的 warning，终端执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -Syy</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="安装-vim"><a href="#安装-vim" class="headerlink" title="安装 vim"></a>安装 vim</h2><p>vim 无疑是linux下最好用的编辑器，不是很熟悉vim 的可以终端执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vimtutor</span><br></pre></td></tr></table></figure>
+<p>获取 《VIM 教程》，讲述了一些必要的基本命令，效果还可以，接下来假定你已经会使用 vim编辑器，如果实在不想学习vim，可以使用一些其他的编辑器，如 nano，也是很方便</p>
+<p>安装 vim</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S vim</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="添加-archlinuxCN-源"><a href="#添加-archlinuxCN-源" class="headerlink" title="添加 archlinuxCN 源"></a>添加 archlinuxCN 源</h2><p>编辑 pacman.conf 配置文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/pacman.conf</span><br></pre></td></tr></table></figure>
+<p>在底部添加(连续按’GG’就可以跳转到文章尾)：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[archlinuxcn]</span><br><span class="line">SigLevel = Optional TrustedOnly</span><br><span class="line">Server = https://mirrors.ustc.edu.cn/archlinuxcn/<span class="variable">$arch</span></span><br></pre></td></tr></table></figure>
+<p>然后终端执行，更新数据包</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -Syy &amp;&amp; sudo pacman -S archlinuxcn-keyring</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -Syu</span><br></pre></td></tr></table></figure>
+<p>这一下更新包较多，大概1.5G</p>
+<hr>
+<h2 id="MacBook-Air-安装-Manjaro-不能连接无线网"><a href="#MacBook-Air-安装-Manjaro-不能连接无线网" class="headerlink" title="MacBook Air 安装 Manjaro 不能连接无线网"></a>MacBook Air 安装 Manjaro 不能连接无线网</h2><p>Mac 使用的是博通的网卡，需要自己安装无限网卡驱动，可以使用 “inxi -F” 查看自己的网卡型号</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Network:</span><br><span class="line">  Device-1: Broadcom and subsidiaries BCM4360 802.11ac Wireless Network Adapter</span><br><span class="line">  driver: wl</span><br><span class="line">  IF: wlp3s0 state: up mac: d0:81:7a:be:dd:80</span><br></pre></td></tr></table></figure>
+<p>我的网卡型号时 BCM4360</p>
+<p>先连接有线网，sudo pacman -Syu 更新系统，然后在系统设置里找到内核，查看内核版本，选择与内核版本匹配的linux-headers，如我正在运行的内核是 Linux 4.19.36-1，选择 linux419-headers安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S linux-headers 或者 yaourt linux-headers</span><br></pre></td></tr></table></figure>
+<p>最后安装无线网卡驱动</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S broadcom-wl-dkms</span><br></pre></td></tr></table></figure>
+<p>重启，ok</p>
+<hr>
+<h2 id="安装搜狗输入法"><a href="#安装搜狗输入法" class="headerlink" title="安装搜狗输入法"></a>安装搜狗输入法</h2><p>Manjaro 下有很多可以选择的输入法，如搜狗、谷歌，个人感觉搜狗更加贴切国内用户的使用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S fcitx-sogoupinyin</span><br><span class="line">sudo pacman -S fcitx-im				<span class="comment"># 全部安装</span></span><br><span class="line">sudo pacman -S fcitx-configtool		<span class="comment"># 图形化配置工具</span></span><br></pre></td></tr></table></figure>
+<p>然后配置中文输入发环境变量，编辑 ~/.xprofile文件（如果不存在，则新建），添加：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> GTK_IM_MODULE=fcitx</span><br><span class="line"><span class="built_in">export</span> QT_IM_MODULE=fcitx</span><br><span class="line"><span class="built_in">export</span> XMODIFIERS=<span class="string">"@im=fcitx"</span></span><br></pre></td></tr></table></figure>
+<p>重启后就可以正常使用了</p>
+<hr>
+<h2 id="安装常用软件"><a href="#安装常用软件" class="headerlink" title="安装常用软件"></a>安装常用软件</h2><h3 id="安装-yaourt-amp-yay"><a href="#安装-yaourt-amp-yay" class="headerlink" title="安装 yaourt &amp; yay"></a>安装 yaourt &amp; yay</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S yaourt yay</span><br></pre></td></tr></table></figure>
+<h3 id="安装-git"><a href="#安装-git" class="headerlink" title="安装 git"></a>安装 git</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S git</span><br></pre></td></tr></table></figure>
+<h4 id="设置个人-github-信息"><a href="#设置个人-github-信息" class="headerlink" title="设置个人 github 信息"></a>设置个人 github 信息</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"github用户名"</span></span><br><span class="line">git config --global user.email <span class="string">"注册邮箱"</span></span><br></pre></td></tr></table></figure>
+<h3 id="安装-zsh-–-shell中的极品"><a href="#安装-zsh-–-shell中的极品" class="headerlink" title="安装 zsh – shell中的极品"></a>安装 zsh – shell中的极品</h3><p>安装 zsh (需要先把 git 安装好)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S zsh</span><br></pre></td></tr></table></figure>
+<p>配置 oh-my-zsh</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh -c <span class="string">"<span class="variable">$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)</span>"</span></span><br></pre></td></tr></table></figure>
+<p>更换默认的shell</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chsh -s /bin/zsha</span><br></pre></td></tr></table></figure>
+<h3 id="安装-chromium"><a href="#安装-chromium" class="headerlink" title="安装 chromium"></a>安装 chromium</h3><p>chromium 是开发者版的谷歌浏览器，更新较为频繁</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S chromium</span><br></pre></td></tr></table></figure>
+<h3 id="安装网易云音乐"><a href="#安装网易云音乐" class="headerlink" title="安装网易云音乐"></a>安装网易云音乐</h3><p>桌面版：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S netease-cloud-music</span><br></pre></td></tr></table></figure>
+<p>终端版：<a href="https://github.com/darknessomi/musicbox" target="_blank" rel="noopener">musicbox</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yaourt musicbox</span><br></pre></td></tr></table></figure>
+<p>安装完后终端键入 musicbox 就可以体验终端版的网易云了</p>
+<h3 id="安装-WPS"><a href="#安装-WPS" class="headerlink" title="安装 WPS"></a>安装 WPS</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S wps-office</span><br><span class="line">sudo pacman -S ttf-wps-fonts    <span class="comment"># 安装wps字体</span></span><br></pre></td></tr></table></figure>
+<h3 id="安装微信"><a href="#安装微信" class="headerlink" title="安装微信"></a>安装微信</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S electronic-wechat</span><br></pre></td></tr></table></figure>
+<h3 id="安装-ssr"><a href="#安装-ssr" class="headerlink" title="安装 ssr"></a>安装 ssr</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S shadowsocks-qt5</span><br></pre></td></tr></table></figure>
+<h3 id="安装坚果云"><a href="#安装坚果云" class="headerlink" title="安装坚果云"></a>安装坚果云</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S nutstore</span><br></pre></td></tr></table></figure>
+<h3 id="安装-VScode"><a href="#安装-VScode" class="headerlink" title="安装 VScode"></a>安装 VScode</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S visual-studio-code-bin</span><br></pre></td></tr></table></figure>
+<h3 id="安装主题"><a href="#安装主题" class="headerlink" title="安装主题"></a>安装主题</h3><p>Warning: kde桌面</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S papirus-icon-theme</span><br><span class="line">sudo pacman -S arc-kde kvantum-theme-arc</span><br></pre></td></tr></table></figure>
+<p>安装完成之后可以到设置里更改使用</p>
+<h3 id="安装-uget"><a href="#安装-uget" class="headerlink" title="安装 uget"></a>安装 uget</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S uget aria2</span><br></pre></td></tr></table></figure>
+<h4 id="chrome-启用-uget-下载"><a href="#chrome-启用-uget-下载" class="headerlink" title="chrome 启用 uget 下载"></a>chrome 启用 uget 下载</h4><p>打开 uGet 选择 编辑 -&gt; 设置 -&gt; 插件，然后把插件匹配顺序改为：aria2</p>
+<p>然后安装 chrome 浏览器插件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S uget-intedrator</span><br><span class="line">sudo pacman -S uget-intedrator-chrome</span><br></pre></td></tr></table></figure>
+<h3 id="安装-pycharm-professional"><a href="#安装-pycharm-professional" class="headerlink" title="安装 pycharm professional"></a>安装 pycharm professional</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S pycharm-professional</span><br></pre></td></tr></table></figure>
+<h4 id="破解"><a href="#破解" class="headerlink" title="破解"></a>破解</h4><p>。。。后续</p>
+<h3 id="安装-typora"><a href="#安装-typora" class="headerlink" title="安装 typora"></a>安装 typora</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S typora</span><br></pre></td></tr></table></figure>
+<h3 id="安装-PS-替代品-——-gimp"><a href="#安装-PS-替代品-——-gimp" class="headerlink" title="安装 PS 替代品 —— gimp"></a>安装 PS 替代品 —— gimp</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S gimp</span><br></pre></td></tr></table></figure>
+<h3 id="安装-flash"><a href="#安装-flash" class="headerlink" title="安装 flash"></a>安装 flash</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S pepper-flash</span><br><span class="line">sudo pacman -S flashplugin</span><br></pre></td></tr></table></figure>
+<p>配置：后续。。。</p>
+<h3 id="安装-mysql"><a href="#安装-mysql" class="headerlink" title="安装 mysql"></a>安装 mysql</h3><p><span id="mysql"></span></p>
+<h4 id="安装-mysql-1"><a href="#安装-mysql-1" class="headerlink" title="安装 mysql"></a>安装 mysql</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S mysql</span><br></pre></td></tr></table></figure>
+<h4 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mysqld --initialize --user=mysql --basedir=/usr --datedir=/var/lib/mysql</span><br></pre></td></tr></table></figure>
+<p>执行结束后默认创建一个 SQL 用户：root 以及 root用户密码</p>
+<h4 id="开机自启"><a href="#开机自启" class="headerlink" title="开机自启"></a>开机自启</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl <span class="built_in">enable</span> mysqld.service</span><br></pre></td></tr></table></figure>
+<h4 id="启动-MySQL-服务"><a href="#启动-MySQL-服务" class="headerlink" title="启动 MySQL 服务"></a>启动 MySQL 服务</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start mysqld.service		<span class="comment"># 启动</span></span><br><span class="line">sudo systemctl status mysqld.service 	<span class="comment"># 查看状态</span></span><br></pre></td></tr></table></figure>
+<h4 id="连接数据库"><a href="#连接数据库" class="headerlink" title="连接数据库"></a>连接数据库</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -uroot -p</span><br></pre></td></tr></table></figure>
+<p>输入刚才生成的 root 密码</p>
+<h4 id="修改-root-密码"><a href="#修改-root-密码" class="headerlink" title="修改 root 密码"></a>修改 root 密码</h4><p>首先要连接数据库，然后根据 mysql 版本键入命令</p>
+<p>mysql 8</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER USER <span class="string">'root'</span>@<span class="string">'localhost'</span> IDENTIFIED WITH mysql_native_password BY <span class="string">'新密码'</span>;</span><br></pre></td></tr></table></figure>
+<p>mysql 8.0 以下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER user <span class="string">'root'</span>@<span class="string">'localhost'</span> IDENTIFIED BY <span class="string">'新密码'</span>;</span><br></pre></td></tr></table></figure>
+<h4 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h4><p>mysql 身份验证问题，mariaDB的替换</p>
+<h4 id="安装-mycli"><a href="#安装-mycli" class="headerlink" title="安装 mycli"></a>安装 mycli</h4><p>由于 mysql 在使用过程不提示命令，mycli就可以很好地解决这一点</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S mycli</span><br></pre></td></tr></table></figure>
+<p>但在MySQL 下，mycli 插件无法使用了，首先要确保 PyMySQL &gt;= 0.6.7</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install pymysql</span><br></pre></td></tr></table></figure>
+<h4 id="安装-mysql-workbench"><a href="#安装-mysql-workbench" class="headerlink" title="安装 mysql workbench"></a>安装 mysql workbench</h4><p>数据库可视化也是很人性化的</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S mysql-workbench</span><br></pre></td></tr></table></figure>
+<h4 id="Manjaro-下-mysql-巨坑"><a href="#Manjaro-下-mysql-巨坑" class="headerlink" title="Manjaro 下 mysql 巨坑"></a>Manjaro 下 mysql 巨坑</h4><p>Manjaro 每次更新的时候，mysql 都有可能崩溃，因为更新的时候说不定哪个库或者依赖更新，而mysql没有及时更新都会造成 mysql 无法启动成功，很是头疼，正在考虑其他数据库  /(ㄒoㄒ)/~~</p>
+<h3 id="安装-gpick-取色工具"><a href="#安装-gpick-取色工具" class="headerlink" title="安装 gpick 取色工具"></a>安装 gpick 取色工具</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S gpick</span><br></pre></td></tr></table></figure>
+<h3 id="安装-redshift-gtk-护眼神器"><a href="#安装-redshift-gtk-护眼神器" class="headerlink" title="安装 redshift-gtk 护眼神器"></a>安装 redshift-gtk 护眼神器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S redshift  <span class="comment"># 或者 sudo pacman -S redshift-gtk</span></span><br></pre></td></tr></table></figure>
+<p>在系统设置设置自动启动就可以每次开机连接网络后自动开启护眼模式了</p>
+<h3 id="安装-pip"><a href="#安装-pip" class="headerlink" title="安装 pip"></a>安装 pip</h3><p>Manjaro 默认是有 pip的</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S wget</span><br><span class="line">wget https://bootstrap.pypa.io/get-pip.py</span><br><span class="line">sudo python get-pip.py</span><br></pre></td></tr></table></figure>
+<h3 id="安装-virtualbox"><a href="#安装-virtualbox" class="headerlink" title="安装 virtualbox"></a>安装 virtualbox</h3><p>坑太多，后续。。。</p>
+<hr>
+<h2 id="更新后解决搜狗输入法乱码"><a href="#更新后解决搜狗输入法乱码" class="headerlink" title="更新后解决搜狗输入法乱码"></a>更新后解决搜狗输入法乱码</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sogou-qimpanel</span><br></pre></td></tr></table></figure>
+<p>提示找不到依赖库，重新建立软链接</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ln -s /usr/lib64/libidn.so.12.6.0 /usr/lib64/libidn.so.11</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="pacman-常用命令"><a href="#pacman-常用命令" class="headerlink" title="pacman 常用命令"></a>pacman 常用命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">pacman -S  	<span class="comment"># 安装</span></span><br><span class="line">pacman -R   <span class="comment"># 删除</span></span><br><span class="line">pacman -Rs  <span class="comment"># 移除已安装不需要软件包</span></span><br><span class="line">pacman -Rsc <span class="comment"># 删除一个包，所有依赖</span></span><br><span class="line">pacman -Syu <span class="comment"># 升级包</span></span><br><span class="line">pacman -Ss  <span class="comment"># 查询包数据库</span></span><br><span class="line">pacman -Qs  <span class="comment"># 搜索已安装的包</span></span><br><span class="line">pacman -Si  <span class="comment"># 显示包大量信息</span></span><br><span class="line">pacman -Qi  <span class="comment"># 本地安装包</span></span><br><span class="line">pacman -Sc  <span class="comment"># 清理包缓存</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="Manjaro-搭建-Apache、Mysql、PHP-环境"><a href="#Manjaro-搭建-Apache、Mysql、PHP-环境" class="headerlink" title="Manjaro 搭建 Apache、Mysql、PHP 环境"></a>Manjaro 搭建 Apache、Mysql、PHP 环境</h2><h3 id="安装-Apache"><a href="#安装-Apache" class="headerlink" title="安装 Apache"></a>安装 Apache</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S apache</span><br></pre></td></tr></table></figure>
+<p>查看 Apache 状态和版本信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl status httpd</span><br><span class="line">apachectl -v   	<span class="comment"># 或者 httpd -v</span></span><br></pre></td></tr></table></figure>
+<p>设置开机启动</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl <span class="built_in">enable</span> httpd</span><br><span class="line">sudo systemctl restart httpd</span><br></pre></td></tr></table></figure>
+<p>站点根目录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /srv/http/</span><br></pre></td></tr></table></figure>
+<h3 id="安装-Mysql"><a href="#安装-Mysql" class="headerlink" title="安装 Mysql"></a>安装 Mysql</h3><p><a href="#mysql">a跳转</a></p>
+<p><a href="#mysql">md跳转</a></p>
+<h3 id="安装-PHP"><a href="#安装-PHP" class="headerlink" title="安装 PHP"></a>安装 PHP</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S php php-apache</span><br></pre></td></tr></table></figure>
+<p>修改 apache 配置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/httpd/conf/httpd.conf</span><br></pre></td></tr></table></figure>
+<p>注释掉</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LoadModule mpm_event_module modules/mod_mpm_event.so</span><br></pre></td></tr></table></figure>
+<p>去掉注释</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LoadModule mpm_prefork_module modules/mod_mpm_prefork.so</span><br></pre></td></tr></table></figure>
+<p>在末尾添加</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">LoadModule php7_module modules/libphp7.so</span><br><span class="line">AddHandler php7-script php</span><br><span class="line">Include conf/extra/php7_module.conf</span><br></pre></td></tr></table></figure>
+<p>测试 php</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /srv/http/test.php</span><br></pre></td></tr></table></figure>
+<p>键入php代码</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    phpinfo();</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p>重启 apache</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl restart httpd</span><br></pre></td></tr></table></figure>
+<p>浏览器访问 <a href="http://localhost/test.php" target="_blank" rel="noopener">http://localhost/test.php</a></p>
+<h3 id="安装-phpMyAdmin"><a href="#安装-phpMyAdmin" class="headerlink" title="安装 phpMyAdmin"></a>安装 phpMyAdmin</h3><p>与 mysql workbench 类似，phpMyAdmin也是将数据库图形化，优点是浏览器访问，可以跨平台使用，也可以用在服务器端的数据库</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S phpmyadmin</span><br></pre></td></tr></table></figure>
+<p>编辑 php 配置文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/php/php.ini</span><br></pre></td></tr></table></figure>
+<p>确认接下来几行没有被注释掉</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[...]</span><br><span class="line">extension=bz2.so		<span class="comment"># 我的是 extension=bz2</span></span><br><span class="line">extension=mysqli.so     <span class="comment"># extension=mysqli</span></span><br><span class="line">[...]</span><br></pre></td></tr></table></figure>
+<p>然后，创建 phpmyadmin的配置文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/httpd/conf/extra/phpmyadmin.conf</span><br></pre></td></tr></table></figure>
+<p>添加：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Alias /phpmyadmin <span class="string">"/usr/share/webapps/phpMyAdmin"</span></span><br><span class="line">&lt;Directory <span class="string">"/usr/share/webapps/phpMyAdmin"</span>&gt;</span><br><span class="line">DirectoryIndex index.php</span><br><span class="line">AllowOverride All</span><br><span class="line">Options FollowSymlinks</span><br><span class="line">Require all granted</span><br><span class="line">&lt;/Directory&gt;</span><br></pre></td></tr></table></figure>
+<p>然后，打开 apache 配置文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/httpd/conf/httpd.conf</span><br></pre></td></tr></table></figure>
+<p>末尾添加：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Include conf/extra/phpmyadmin.conf</span><br></pre></td></tr></table></figure>
+<p>重启 apache</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl restart httpd</span><br></pre></td></tr></table></figure>
+<p>测试 phpmyadmin    <a href="http://localhost/phpmyadmin" target="_blank" rel="noopener">http://localhost/phpmyadmin</a></p>
+<p>进入主界面如果在底部出现error: “The configuration file now needs a secret passphrase (blowfish_secret)” ，编辑</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/webapps/phpmyadmin/config.inc.php</span><br></pre></td></tr></table></figure>
+<p>找到以下代码并编辑</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$cfg</span>[<span class="string">'blowfish_secret'</span>] = <span class="string">'`MyP@$S`'</span>; /* YOU MUST FILL IN THIS FOR COOKIE AUTH!$ /**</span><br></pre></td></tr></table></figure>
+<p>重启 apache</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl restart httpd</span><br></pre></td></tr></table></figure>
+<p>坑，后续。。。</p>
+<hr>
+<h2 id="Manjaro-使用-Wine"><a href="#Manjaro-使用-Wine" class="headerlink" title="Manjaro 使用 Wine"></a>Manjaro 使用 Wine</h2><h3 id="安装配置-Wine"><a href="#安装配置-Wine" class="headerlink" title="安装配置 Wine"></a>安装配置 Wine</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S wine wine_gecko wine_mono</span><br></pre></td></tr></table></figure>
+<p>配置 64 &amp; 32 位环境</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mv ~/.wine ~/.wine64</span><br><span class="line"><span class="comment"># 使用WINEARCH建立32位环境配置</span></span><br><span class="line">WINEARCH=win32 WINEPREFIX=~/.wine winecfg</span><br></pre></td></tr></table></figure>
+<p>安装32位显卡驱动</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S lib32-mesa lib32-nvidia-utils</span><br></pre></td></tr></table></figure>
+<h3 id="设置字体"><a href="#设置字体" class="headerlink" title="设置字体"></a>设置字体</h3><p><a href="https://blog.csdn.net/zbgjhy88/article/details/85110956" target="_blank" rel="noopener">https://blog.csdn.net/zbgjhy88/article/details/85110956</a>  </p>
+<p>后续。。。</p>
+<h3 id="运行-Windows-应用"><a href="#运行-Windows-应用" class="headerlink" title="运行 Windows 应用"></a>运行 Windows 应用</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wine exe文件名</span><br></pre></td></tr></table></figure>
+<h3 id="安装-Windows-应用"><a href="#安装-Windows-应用" class="headerlink" title="安装 Windows 应用"></a>安装 Windows 应用</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msiexec -i msi安装包</span><br></pre></td></tr></table></figure>
+<h3 id="卸载应用"><a href="#卸载应用" class="headerlink" title="卸载应用"></a>卸载应用</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wine uninstaller</span><br></pre></td></tr></table></figure>
+<h3 id="wine-菜单管理"><a href="#wine-菜单管理" class="headerlink" title="wine 菜单管理"></a>wine 菜单管理</h3><p>wine 中安装的应用可以在系统菜单中以 Wine 子菜单的形式呈现</p>
+<p>后续。。。</p>
+<h3 id="Deepin-Wine"><a href="#Deepin-Wine" class="headerlink" title="Deepin-Wine"></a>Deepin-Wine</h3><p>Deepin-Wine 是国产操作系统 Deepin 移植的Wine，对国内软件，有着更好的兼容性和使用体验</p>
+<p>Warning: Deepin-Wine 32位</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S deepin-wine</span><br></pre></td></tr></table></figure>
+<p>安装 exe程序</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deepin-wine QQBrowser.exe</span><br></pre></td></tr></table></figure>
+<p>打开注册表</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deepin-wine regedit</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="bash-脚本"><a href="#bash-脚本" class="headerlink" title="bash 脚本"></a>bash 脚本</h2><p>。。。更新中</p>
+
+      
+    </div>
+    <div>
+       
+          <div>
+	
+		<div style="text-align: center; color: #ccc; font-size: 14px;">
+			----------本文结束<i class="fa fa-paw"></i>感谢您的阅读----------
+		</div>
+	
+</div>
+
+       
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>小礼物走一走，坚持原创分享✊</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/upload/image/wechatpay.jpeg" alt="QIXQI 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/upload/image/alipay.png" alt="QIXQI 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Manjaro/" rel="tag"><i class="fa fa-tag"></i> Manjaro</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/28/ssr-creat/" rel="next" title="vultr 搭建ssr/bbr加速">
+                <i class="fa fa-chevron-left"></i> vultr 搭建ssr/bbr加速
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!--MOB SHARE BEGIN-->
+<div class="-mob-share-ui-button -mob-share-open">分享</div>
+<div class="-mob-share-ui" style="display: none">
+    <ul class="-mob-share-list">
+        <li class="-mob-share-weibo"><p>新浪微博</p></li>
+        <li class="-mob-share-tencentweibo"><p>腾讯微博</p></li>
+        <li class="-mob-share-qzone"><p>QQ空间</p></li>
+        <li class="-mob-share-qq"><p>QQ好友</p></li>
+        <li class="-mob-share-renren"><p>人人网</p></li>
+        <li class="-mob-share-kaixin"><p>开心网</p></li>
+        <li class="-mob-share-douban"><p>豆瓣</p></li>
+        <li class="-mob-share-facebook"><p>Facebook</p></li>
+        <li class="-mob-share-twitter"><p>Twitter</p></li>
+    </ul>
+    <div class="-mob-share-close">取消</div>
+</div>
+<div class="-mob-share-ui-bg"></div>
+<script id="-mob-share" src="https://f1.webshare.mob.com/code/mob-share.js?appkey=2ae2af4b38d88"></script>
+<!--MOB SHARE END-->            
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/upload/image/portrait.jpeg" alt="QIXQI">
+            
+              <p class="site-author-name" itemprop="name">QIXQI</p>
+              <p class="site-description motion-element" itemprop="description">Keep fucking the world</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/QIXQI" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:zhengxiang4056@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/QIXXQI" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://youtube.com/channel/UCFSIKIR4wtROdR6B1ro58DQ" target="_blank" title="YouTube">
+                      
+                        <i class="fa fa-fw fa-youtube"></i>YouTube</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://gitee.com/QIXQI/" target="_blank" title="Gitee">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Gitee</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://instagram.com/qixxqi" target="_blank" title="Instagram">
+                      
+                        <i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons">
+              </a>
+            </div>
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.zhengxiang4056.club" title="小象study" target="_blank">小象study</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.github.com" title="Github" target="_blank">Github</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.telegram.org" title="Telegram" target="_blank">Telegram</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#同步远程数据包到本地"><span class="nav-number">1.</span> <span class="nav-text">同步远程数据包到本地</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-vim"><span class="nav-number">2.</span> <span class="nav-text">安装 vim</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加-archlinuxCN-源"><span class="nav-number">3.</span> <span class="nav-text">添加 archlinuxCN 源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更新"><span class="nav-number">4.</span> <span class="nav-text">更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MacBook-Air-安装-Manjaro-不能连接无线网"><span class="nav-number">5.</span> <span class="nav-text">MacBook Air 安装 Manjaro 不能连接无线网</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装搜狗输入法"><span class="nav-number">6.</span> <span class="nav-text">安装搜狗输入法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装常用软件"><span class="nav-number">7.</span> <span class="nav-text">安装常用软件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-yaourt-amp-yay"><span class="nav-number">7.1.</span> <span class="nav-text">安装 yaourt &amp; yay</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-git"><span class="nav-number">7.2.</span> <span class="nav-text">安装 git</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#设置个人-github-信息"><span class="nav-number">7.2.1.</span> <span class="nav-text">设置个人 github 信息</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-zsh-–-shell中的极品"><span class="nav-number">7.3.</span> <span class="nav-text">安装 zsh – shell中的极品</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-chromium"><span class="nav-number">7.4.</span> <span class="nav-text">安装 chromium</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装网易云音乐"><span class="nav-number">7.5.</span> <span class="nav-text">安装网易云音乐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-WPS"><span class="nav-number">7.6.</span> <span class="nav-text">安装 WPS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装微信"><span class="nav-number">7.7.</span> <span class="nav-text">安装微信</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-ssr"><span class="nav-number">7.8.</span> <span class="nav-text">安装 ssr</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装坚果云"><span class="nav-number">7.9.</span> <span class="nav-text">安装坚果云</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-VScode"><span class="nav-number">7.10.</span> <span class="nav-text">安装 VScode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装主题"><span class="nav-number">7.11.</span> <span class="nav-text">安装主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-uget"><span class="nav-number">7.12.</span> <span class="nav-text">安装 uget</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#chrome-启用-uget-下载"><span class="nav-number">7.12.1.</span> <span class="nav-text">chrome 启用 uget 下载</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-pycharm-professional"><span class="nav-number">7.13.</span> <span class="nav-text">安装 pycharm professional</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#破解"><span class="nav-number">7.13.1.</span> <span class="nav-text">破解</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-typora"><span class="nav-number">7.14.</span> <span class="nav-text">安装 typora</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-PS-替代品-——-gimp"><span class="nav-number">7.15.</span> <span class="nav-text">安装 PS 替代品 —— gimp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-flash"><span class="nav-number">7.16.</span> <span class="nav-text">安装 flash</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-mysql"><span class="nav-number">7.17.</span> <span class="nav-text">安装 mysql</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装-mysql-1"><span class="nav-number">7.17.1.</span> <span class="nav-text">安装 mysql</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#初始化"><span class="nav-number">7.17.2.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#开机自启"><span class="nav-number">7.17.3.</span> <span class="nav-text">开机自启</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#启动-MySQL-服务"><span class="nav-number">7.17.4.</span> <span class="nav-text">启动 MySQL 服务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#连接数据库"><span class="nav-number">7.17.5.</span> <span class="nav-text">连接数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改-root-密码"><span class="nav-number">7.17.6.</span> <span class="nav-text">修改 root 密码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#后续"><span class="nav-number">7.17.7.</span> <span class="nav-text">后续</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装-mycli"><span class="nav-number">7.17.8.</span> <span class="nav-text">安装 mycli</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装-mysql-workbench"><span class="nav-number">7.17.9.</span> <span class="nav-text">安装 mysql workbench</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Manjaro-下-mysql-巨坑"><span class="nav-number">7.17.10.</span> <span class="nav-text">Manjaro 下 mysql 巨坑</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-gpick-取色工具"><span class="nav-number">7.18.</span> <span class="nav-text">安装 gpick 取色工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-redshift-gtk-护眼神器"><span class="nav-number">7.19.</span> <span class="nav-text">安装 redshift-gtk 护眼神器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-pip"><span class="nav-number">7.20.</span> <span class="nav-text">安装 pip</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-virtualbox"><span class="nav-number">7.21.</span> <span class="nav-text">安装 virtualbox</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更新后解决搜狗输入法乱码"><span class="nav-number">8.</span> <span class="nav-text">更新后解决搜狗输入法乱码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pacman-常用命令"><span class="nav-number">9.</span> <span class="nav-text">pacman 常用命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Manjaro-搭建-Apache、Mysql、PHP-环境"><span class="nav-number">10.</span> <span class="nav-text">Manjaro 搭建 Apache、Mysql、PHP 环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-Apache"><span class="nav-number">10.1.</span> <span class="nav-text">安装 Apache</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-Mysql"><span class="nav-number">10.2.</span> <span class="nav-text">安装 Mysql</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-PHP"><span class="nav-number">10.3.</span> <span class="nav-text">安装 PHP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-phpMyAdmin"><span class="nav-number">10.4.</span> <span class="nav-text">安装 phpMyAdmin</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Manjaro-使用-Wine"><span class="nav-number">11.</span> <span class="nav-text">Manjaro 使用 Wine</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装配置-Wine"><span class="nav-number">11.1.</span> <span class="nav-text">安装配置 Wine</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置字体"><span class="nav-number">11.2.</span> <span class="nav-text">设置字体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运行-Windows-应用"><span class="nav-number">11.3.</span> <span class="nav-text">运行 Windows 应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-Windows-应用"><span class="nav-number">11.4.</span> <span class="nav-text">安装 Windows 应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#卸载应用"><span class="nav-number">11.5.</span> <span class="nav-text">卸载应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wine-菜单管理"><span class="nav-number">11.6.</span> <span class="nav-text">wine 菜单管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deepin-Wine"><span class="nav-number">11.7.</span> <span class="nav-text">Deepin-Wine</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bash-脚本"><span class="nav-number">12.</span> <span class="nav-text">bash 脚本</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <!-- <i class="fa fa-user"></i> -->
+    <i class="fa fa-star"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">QIXQI</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    #
+    <span title="Site words total count">11.7k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'NIFragDNrfS3Q7Y5hukllbdt-9Nh9j0Va',
+        appKey: 'clll4OLyNnxCxuaUMizhdAfq',
+        placeholder: 'ヾﾉ≧∀≦)来啊，快活啊',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+  
+  
+    <script type="text/javascript" src="/js/src/love.js"></script>
+  
+  <script type="text/javascript" src="/js/src/particle.js" count="50" zindex="-2" opacity="0.8" color="0,104,183"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
