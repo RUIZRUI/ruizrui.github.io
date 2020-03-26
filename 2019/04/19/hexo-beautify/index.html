@@ -101,7 +101,7 @@
 <meta property="og:image" content="https://qixqi.github.io/2019/04/19/hexo-beautify/leancloud3.png">
 <meta property="og:image" content="https://qixqi.github.io/2019/04/19/hexo-beautify/iframe1.png">
 <meta property="og:image" content="https://qixqi.github.io/2019/04/19/hexo-beautify/iframe2.png">
-<meta property="og:updated_time" content="2019-05-16T13:50:42.978Z">
+<meta property="og:updated_time" content="2020-03-26T18:02:55.425Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo blog 美化升级">
 <meta name="twitter:description" content="这篇随笔记录了自己 Github Pages 美化的过程，以及添加一系列的常用功能，持续更新">
@@ -535,7 +535,7 @@
 <p>在 /home/git/qixqi.git/hooks 文件下新建钩子文件 post-receive</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /home/git/qixqi.git/hooks</span><br><span class="line">vim post-receive</span><br></pre></td></tr></table></figure>
 <p>修改</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">git --work-tree=/usr/share/nginx/qixqi --git dir=/home/git/qixqi.git checkout -f</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">git --work-tree=/usr/share/nginx/qixqi --git-dir=/home/git/qixqi.git checkout -f</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>​        工作原理是，提交时先访问 /home/git/qixqi.git ，然后receive，提交到 blog根.        目录，/usr/share/nginx/qixqi/</p>
@@ -772,12 +772,12 @@
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% aplayer "南方姑娘" "赵雷" "https://qixqi.club/audio/southern-girl.mp3" "https://qixqi.club/images/southern-girl.jpg" "autoplay=false" %&#125;</span><br></pre></td></tr></table></figure>
 <p>同样最好不要自动播放，同时 “autoplay=false”报错：Unrecognized tag argument，所以删去后效果如下</p>
 
-        <div id="aplayer-kldpuQQI" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-EbyUNDfk" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-kldpuQQI"),
+            element: document.getElementById("aplayer-EbyUNDfk"),
             narrow: false,
             autoplay: false,
             showlrc: false,
@@ -1163,7 +1163,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <!-- <i class="fa fa-user"></i> -->
     <i class="fa fa-star"></i>
