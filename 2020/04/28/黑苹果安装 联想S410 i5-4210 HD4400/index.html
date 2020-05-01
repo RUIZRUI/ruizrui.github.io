@@ -1,0 +1,1681 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/upload/image/test.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="黑苹果,Hackintosh,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="QIXQI's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="疫情期间，在家里待得快要发霉了，开始折腾起黑苹果打发时间，电脑机型比较老，联想S410，处理器intel i5-4210，核芯显卡HD4400，其他型号的安装过程类似，只不过需要更换适合自己机型的efi">
+<meta name="keywords" content="黑苹果,Hackintosh">
+<meta property="og:type" content="article">
+<meta property="og:title" content="黑苹果安装 联想S410 i5-4210 HD4400">
+<meta property="og:url" content="https://qixqi.github.io/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/index.html">
+<meta property="og:site_name" content="QIXQI&#39;s Blog">
+<meta property="og:description" content="疫情期间，在家里待得快要发霉了，开始折腾起黑苹果打发时间，电脑机型比较老，联想S410，处理器intel i5-4210，核芯显卡HD4400，其他型号的安装过程类似，只不过需要更换适合自己机型的efi">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://qixqi.github.io/2020/04/28/黑苹果安装%20联想S410%20i5-4210%20HD4400/laomaotao.png">
+<meta property="og:image" content="https://qixqi.github.io/2020/04/28/黑苹果安装%20联想S410%20i5-4210%20HD4400/rufus1.png">
+<meta property="og:image" content="https://qixqi.github.io/2020/04/28/黑苹果安装%20联想S410%20i5-4210%20HD4400/DiskGenius1.png">
+<meta property="og:image" content="https://qixqi.github.io/2020/04/28/黑苹果安装%20联想S410%20i5-4210%20HD4400/DiskGenius2.png">
+<meta property="og:image" content="https://qixqi.github.io/2020/04/28/黑苹果安装%20联想S410%20i5-4210%20HD4400/DiskGenius3.png">
+<meta property="og:image" content="https://qixqi.github.io/2020/04/28/黑苹果安装%20联想S410%20i5-4210%20HD4400/DiskGenius4.jpg">
+<meta property="og:image" content="https://qixqi.github.io/2020/04/28/黑苹果安装%20联想S410%20i5-4210%20HD4400/DiskGenius5.jpg">
+<meta property="og:image" content="https://qixqi.github.io/2020/04/28/黑苹果安装%20联想S410%20i5-4210%20HD4400/bios1.jpg">
+<meta property="og:image" content="https://qixqi.github.io/2020/04/28/黑苹果安装%20联想S410%20i5-4210%20HD4400/defender.png">
+<meta property="og:image" content="https://qixqi.github.io/2020/04/28/黑苹果安装%20联想S410%20i5-4210%20HD4400/keygen1.png">
+<meta property="og:image" content="https://qixqi.github.io/2020/04/28/黑苹果安装%20联想S410%20i5-4210%20HD4400/keygen2.png">
+<meta property="og:image" content="https://qixqi.github.io/2020/04/28/黑苹果安装%20联想S410%20i5-4210%20HD4400/RAW1.png">
+<meta property="og:image" content="https://qixqi.github.io/2020/04/28/黑苹果安装%20联想S410%20i5-4210%20HD4400/RAW2.png">
+<meta property="og:image" content="https://qixqi.github.io/2020/04/28/黑苹果安装%20联想S410%20i5-4210%20HD4400/RAW3.png">
+<meta property="og:image" content="https://qixqi.github.io/2020/04/28/黑苹果安装%20联想S410%20i5-4210%20HD4400/RAW4.png">
+<meta property="og:image" content="https://qixqi.github.io/2020/04/28/黑苹果安装%20联想S410%20i5-4210%20HD4400/EFI1.png">
+<meta property="og:image" content="https://qixqi.github.io/2020/04/28/黑苹果安装%20联想S410%20i5-4210%20HD4400/EFI2.png">
+<meta property="og:image" content="https://qixqi.github.io/2020/04/28/黑苹果安装%20联想S410%20i5-4210%20HD4400/EFI3.png">
+<meta property="og:image" content="https://qixqi.github.io/2020/04/28/黑苹果安装%20联想S410%20i5-4210%20HD4400/EFI4.png">
+<meta property="og:image" content="https://qixqi.github.io/2020/04/28/黑苹果安装%20联想S410%20i5-4210%20HD4400/EFI5.png">
+<meta property="og:image" content="https://qixqi.github.io/2020/04/28/黑苹果安装%20联想S410%20i5-4210%20HD4400/EFI6.png">
+<meta property="og:image" content="https://qixqi.github.io/2020/04/28/黑苹果安装%20联想S410%20i5-4210%20HD4400/U_Mojave1.png">
+<meta property="og:image" content="https://qixqi.github.io/2020/04/28/黑苹果安装%20联想S410%20i5-4210%20HD4400/U_Mojave2.png">
+<meta property="og:image" content="https://qixqi.github.io/2020/04/28/黑苹果安装%20联想S410%20i5-4210%20HD4400/U_Mojave3.png">
+<meta property="og:image" content="https://qixqi.github.io/2020/04/28/黑苹果安装%20联想S410%20i5-4210%20HD4400/U_Mojave4.png">
+<meta property="og:image" content="https://qixqi.github.io/2020/04/28/黑苹果安装%20联想S410%20i5-4210%20HD4400/U_Mojave5.png">
+<meta property="og:image" content="https://qixqi.github.io/2020/04/28/黑苹果安装%20联想S410%20i5-4210%20HD4400/U_Mojave6.png">
+<meta property="og:image" content="https://qixqi.github.io/2020/04/28/黑苹果安装%20联想S410%20i5-4210%20HD4400/bios2.jpg">
+<meta property="og:image" content="https://qixqi.github.io/2020/04/28/黑苹果安装%20联想S410%20i5-4210%20HD4400/bios3.jpg">
+<meta property="og:image" content="https://qixqi.github.io/2020/04/28/黑苹果安装%20联想S410%20i5-4210%20HD4400/install1.jpg">
+<meta property="og:image" content="https://qixqi.github.io/2020/04/28/黑苹果安装%20联想S410%20i5-4210%20HD4400/install2.jpg">
+<meta property="og:image" content="https://qixqi.github.io/2020/04/28/黑苹果安装%20联想S410%20i5-4210%20HD4400/install3.jpg">
+<meta property="og:image" content="https://qixqi.github.io/2020/04/28/黑苹果安装%20联想S410%20i5-4210%20HD4400/install4.jpg">
+<meta property="og:image" content="https://qixqi.github.io/2020/04/28/黑苹果安装%20联想S410%20i5-4210%20HD4400/install5.jpg">
+<meta property="og:image" content="https://qixqi.github.io/2020/04/28/黑苹果安装%20联想S410%20i5-4210%20HD4400/install6.jpg">
+<meta property="og:image" content="https://qixqi.github.io/2020/04/28/黑苹果安装%20联想S410%20i5-4210%20HD4400/install7.jpg">
+<meta property="og:image" content="https://qixqi.github.io/2020/04/28/黑苹果安装%20联想S410%20i5-4210%20HD4400/install8.jpg">
+<meta property="og:image" content="https://qixqi.github.io/2020/04/28/黑苹果安装%20联想S410%20i5-4210%20HD4400/install9.jpg">
+<meta property="og:image" content="https://qixqi.github.io/2020/04/28/黑苹果安装%20联想S410%20i5-4210%20HD4400/install10.jpg">
+<meta property="og:image" content="https://qixqi.github.io/2020/04/28/黑苹果安装%20联想S410%20i5-4210%20HD4400/install11.jpg">
+<meta property="og:image" content="https://qixqi.github.io/2020/04/28/黑苹果安装%20联想S410%20i5-4210%20HD4400/install12.jpg">
+<meta property="og:image" content="https://qixqi.github.io/2020/04/28/黑苹果安装%20联想S410%20i5-4210%20HD4400/install13.jpg">
+<meta property="og:image" content="https://qixqi.github.io/2020/04/28/黑苹果安装%20联想S410%20i5-4210%20HD4400/install14.jpg">
+<meta property="og:image" content="https://qixqi.github.io/2020/04/28/黑苹果安装%20联想S410%20i5-4210%20HD4400/install15.jpg">
+<meta property="og:image" content="https://qixqi.github.io/2020/04/28/黑苹果安装%20联想S410%20i5-4210%20HD4400/install16.jpg">
+<meta property="og:image" content="https://qixqi.github.io/2020/04/28/黑苹果安装%20联想S410%20i5-4210%20HD4400/clover1.png">
+<meta property="og:image" content="https://qixqi.github.io/2020/04/28/黑苹果安装%20联想S410%20i5-4210%20HD4400/clover2.png">
+<meta property="og:image" content="https://qixqi.github.io/2020/04/28/黑苹果安装%20联想S410%20i5-4210%20HD4400/clover3.png">
+<meta property="og:image" content="https://qixqi.github.io/2020/04/28/黑苹果安装%20联想S410%20i5-4210%20HD4400/clover4.png">
+<meta property="og:image" content="https://qixqi.github.io/2020/04/28/黑苹果安装%20联想S410%20i5-4210%20HD4400/clover5.png">
+<meta property="og:image" content="https://qixqi.github.io/2020/04/28/黑苹果安装%20联想S410%20i5-4210%20HD4400/clover6.png">
+<meta property="og:image" content="https://qixqi.github.io/2020/04/28/黑苹果安装%20联想S410%20i5-4210%20HD4400/clover7.jpg">
+<meta property="og:image" content="https://qixqi.github.io/2020/04/28/黑苹果安装%20联想S410%20i5-4210%20HD4400/problem1_1.jpg">
+<meta property="og:image" content="https://qixqi.github.io/2020/04/28/黑苹果安装%20联想S410%20i5-4210%20HD4400/problem1_2.jpg">
+<meta property="og:image" content="https://qixqi.github.io/2020/04/28/黑苹果安装%20联想S410%20i5-4210%20HD4400/problem1_3.jpg">
+<meta property="og:image" content="https://qixqi.github.io/2020/04/28/黑苹果安装%20联想S410%20i5-4210%20HD4400/problem1_4.jpg">
+<meta property="og:updated_time" content="2020-05-01T23:49:25.754Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="黑苹果安装 联想S410 i5-4210 HD4400">
+<meta name="twitter:description" content="疫情期间，在家里待得快要发霉了，开始折腾起黑苹果打发时间，电脑机型比较老，联想S410，处理器intel i5-4210，核芯显卡HD4400，其他型号的安装过程类似，只不过需要更换适合自己机型的efi">
+<meta name="twitter:image" content="https://qixqi.github.io/2020/04/28/黑苹果安装%20联想S410%20i5-4210%20HD4400/laomaotao.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://qixqi.github.io/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/">
+
+
+
+
+
+  <title>黑苹果安装 联想S410 i5-4210 HD4400 | QIXQI's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <a href="https://github.com/QIXQI" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+     <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">QIXQI's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+           <h1 class="site-subtitle hitokoto" itemprop="description"></h1>
+           <script type="text/javascript" src="https://v1.hitokoto.cn/?encode=js"></script>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-工具">
+          <a href="/tools/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>
+            
+            工具
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-电子书">
+          <a href="/ebook/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>
+            
+            电子书
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://qixqi.github.io/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="QIXQI">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/upload/image/portrait.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="QIXQI's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">黑苹果安装 联想S410 i5-4210 HD4400</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-28T13:56:14+08:00">
+                2020-04-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/黑苹果/" itemprop="url" rel="index">
+                    <span itemprop="name">黑苹果</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.3k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  8
+                </span>
+              
+            </div>
+          
+
+          
+            
+              <span class="post-comments-count">
+               <!-- <span class="post-meta-divider">|</span> -->
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/#comments" itemprop="discussionUrl">
+                  <span>评论次数 </span>
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 阅读次数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+
+          
+              <div class="post-description">
+                  疫情期间，在家里待得快要发霉了，开始折腾起黑苹果打发时间，电脑机型比较老，联想S410，处理器intel i5-4210，核芯显卡HD4400，其他型号的安装过程类似，只不过需要更换适合自己机型的efi
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="安装前准备工作"><a href="#安装前准备工作" class="headerlink" title="安装前准备工作"></a>安装前准备工作</h2><h3 id="调整硬盘"><a href="#调整硬盘" class="headerlink" title="调整硬盘"></a>调整硬盘</h3><p><em>如果硬盘本身就是gpt/guid模式，就不需要这步</em></p>
+<p><strong>使用DiskGenius更改硬盘模式会销毁整个硬盘数据，一定要备份整个硬盘重要数据；除DiskGenius外，windows官网还提供了MBR2GPT工具可以无损更改硬盘模式</strong>，我在这里使用的是DiskGenius</p>
+<h4 id="制作老毛桃U盘启动盘"><a href="#制作老毛桃U盘启动盘" class="headerlink" title="制作老毛桃U盘启动盘"></a>制作老毛桃U盘启动盘</h4><ol>
+<li>访问 <a href="http://laomaotao.qujingzj.net/lmtpe/" target="_blank" rel="noopener">老毛桃官网</a>，选择”下载UEFI版”</li>
+<li>准备一个大于4G的U盘，制作启动盘，选项默认即可<br> <img src="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/laomaotao.png" alt="laomaotao"></li>
+<li>制作完成</li>
+</ol>
+<h4 id="制作UEFI引导的w10启动盘"><a href="#制作UEFI引导的w10启动盘" class="headerlink" title="制作UEFI引导的w10启动盘"></a>制作UEFI引导的w10启动盘</h4><ol>
+<li>访问 <a href="https://msdn.itellyou.cn/" target="_blank" rel="noopener">I Tell you</a></li>
+<li>选择“操作系统” –&gt; 选择你喜欢的w10系统 –&gt; 查看镜像详细信息，复制ed2k链接</li>
+<li>下载镜像<ul>
+<li>可以使用迅雷</li>
+<li>如果有百度云盘会员，可以先离线下载，然后再下载</li>
+</ul>
+</li>
+<li>下载 <a href="https://qixqi.cn/upload/upload/rufus-3.4.exe" target="_blank" rel="noopener">rufus</a>，rufus相较于UltraISO很容易制作uefi引导的启动盘，除此之外，安装linux系统大多也是使用rufus</li>
+<li>准别另一个U盘，调整参数，制作启动盘<br> <img src="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/rufus1.png" alt="rufus"></li>
+<li>制作完成</li>
+</ol>
+<h4 id="删除硬盘分区"><a href="#删除硬盘分区" class="headerlink" title="删除硬盘分区"></a>删除硬盘分区</h4><ul>
+<li><strong>重要的是事情说三遍：一定备份、一定备份、一定备份</strong></li>
+<li>使用老毛桃启动盘，重启系统，F12（根据自己机型）选择U盘启动</li>
+<li>启动 DiskGenius硬盘分区工具</li>
+<li>选中整块硬盘 –&gt; 右键 –&gt; 删除所有分区<br><img src="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/DiskGenius1.png" alt="DiskGenius1.png"></li>
+</ul>
+<h4 id="更改硬盘模式为gpt-guid"><a href="#更改硬盘模式为gpt-guid" class="headerlink" title="更改硬盘模式为gpt/guid"></a>更改硬盘模式为gpt/guid</h4><ul>
+<li>选中整块硬盘 –&gt; 右键 –&gt; 转换分区表类型为GUID模式<br><img src="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/DiskGenius2.png" alt="DiskGenius2.png"></li>
+</ul>
+<h4 id="新建EFI-ESP分区"><a href="#新建EFI-ESP分区" class="headerlink" title="新建EFI/ESP分区"></a>新建EFI/ESP分区</h4><ul>
+<li>选中硬盘空闲区域 –&gt; 新建分区/新建ESP分区 –&gt; 勾选“建立ESP分区”，分区大小至少400M，不能太小，否则后续安装可能失败 –&gt; 一路确定<br><img src="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/DiskGenius3.png" alt="DiskGenius3.png"></li>
+</ul>
+<h4 id="新建主分区"><a href="#新建主分区" class="headerlink" title="新建主分区"></a>新建主分区</h4><ul>
+<li>这里我分配两个主分区，分别是w10的C盘和D盘，同时根据自己需求，预留合适大小的空闲空间，来安装MAC系统</li>
+<li>选中硬盘空闲区域 –&gt; 新建分区 –&gt; 勾选”主磁盘分区” –&gt; 填写分区大小 –&gt; 确定<br><img src="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/DiskGenius4.jpg" alt="DiskGenius4.jpg"><br><img src="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/DiskGenius5.jpg" alt="DiskGenius5.jpg"></li>
+</ul>
+<h3 id="安装w10-uefi"><a href="#安装w10-uefi" class="headerlink" title="安装w10+uefi"></a>安装w10+uefi</h3><p><em>如果硬盘本身就是gpt/guid模式，并且windows系统本身就是uefi启动的，就不需要这步</em></p>
+<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><ul>
+<li><p>使用刚刚制作的w10启动盘，重启安装</p>
+</li>
+<li><p>按 Fn+F2 进入BIOS（因电脑型号而异），在 Boot 选项中更改 Boot Mode 为 “UEFI” 后保存退出</p>
+<p><img src="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/bios1.jpg" alt="bios1.jpg"></p>
+</li>
+<li><p>接下来的步骤比较无脑，将新建的第一个主分区当作系统盘即可，这里不再赘述</p>
+</li>
+</ul>
+<h4 id="激活windows"><a href="#激活windows" class="headerlink" title="激活windows"></a>激活windows</h4><ul>
+<li>关闭w10自带杀毒工具的实时保护<br>  <img src="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/defender.png" alt="defender.png"></li>
+<li>下载 <a href="http://qixqi.cn/upload/upload/office%E6%BF%80%E6%B4%BB%E5%B7%A5%E5%85%B7.exe" target="_blank" rel="noopener">激活工具</a></li>
+<li>一键式激活<br>  <img src="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/keygen1.png" alt="keygen1.png"></li>
+<li>如果激活成功，请忽略该步骤<ul>
+<li>针对windows企业版，与教育版与专业版的激活方式不同，上述工具激活不了企业版</li>
+<li>下载 <a href="http://qixqi.cn/upload/upload/Windows%E5%85%A8%E6%BF%80%E6%B4%BB.rar" target="_blank" rel="noopener">Windows全激活工具</a></li>
+<li>选择一种激活方式，这里推荐第一种<br>  <img src="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/keygen2.png" alt="keygen2.png"></li>
+</ul>
+</li>
+</ul>
+<h3 id="新建RAW分区"><a href="#新建RAW分区" class="headerlink" title="新建RAW分区"></a>新建RAW分区</h3><p><em>RAW分区将用来安装MAC系统，根据自己需求选择合适大小</em></p>
+<ul>
+<li>右键“此电脑” –&gt; 管理 –&gt; 磁盘管理 –&gt; 选择预留的空闲空间<br>  <img src="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/RAW1.png" alt="RAW1.png"></li>
+<li>右键空闲空间 –&gt; 新建简单卷 –&gt; 选择“不分配驱动器号或驱动器路径” –&gt; 下一步<br>  <img src="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/RAW2.png" alt="RAW2.png"></li>
+<li>选择“不要格式化这个卷” –&gt; 下一步<br>  <img src="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/RAW3.png" alt="RAW3.png"></li>
+<li>完成<br>  <img src="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/RAW4.png" alt="RAW4.png"></li>
+</ul>
+<h3 id="准备安装黑苹果需要的镜像、工具、引导"><a href="#准备安装黑苹果需要的镜像、工具、引导" class="headerlink" title="准备安装黑苹果需要的镜像、工具、引导"></a>准备安装黑苹果需要的镜像、工具、引导</h3><h4 id="镜像"><a href="#镜像" class="headerlink" title="镜像"></a>镜像</h4><p><em>新手推荐选择 High Sierra 10.13.6，这个比较容易安装，也比较稳定</em></p>
+<ul>
+<li>我选择的是 Majave 10.14.6，clover版本是5027，链接: <a href="https://pan.baidu.com/s/18lt2TUwYbrXC9Vg4ov8mCg" target="_blank" rel="noopener">https://pan.baidu.com/s/18lt2TUwYbrXC9Vg4ov8mCg</a> 提取码: mprs</li>
+<li>此外，还有其他版本的镜像可供选择<ul>
+<li>High Sierra 10.13.6, clover 4596，链接: <a href="https://pan.baidu.com/s/19-Lk3lntmRChEwezfwvdcg" target="_blank" rel="noopener">https://pan.baidu.com/s/19-Lk3lntmRChEwezfwvdcg</a> 提取码: z5hf</li>
+<li>Sierra 10.12.6, clover 4123，链接: <a href="https://pan.baidu.com/s/1_-bwAJ3zp-KiC4TxUUiKyw" target="_blank" rel="noopener">https://pan.baidu.com/s/1_-bwAJ3zp-KiC4TxUUiKyw</a> 提取码: 3ht7</li>
+<li>Catalina 10.15.4, clover 5107，链接: <a href="https://pan.baidu.com/s/1iDrvhZZojv5WZsQnysULKQ" target="_blank" rel="noopener">https://pan.baidu.com/s/1iDrvhZZojv5WZsQnysULKQ</a> 提取码: k5bv</li>
+</ul>
+</li>
+</ul>
+<h4 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h4><p>链接: <a href="https://pan.baidu.com/s/1jfAtjMfutg9NjZclHhZr9w" target="_blank" rel="noopener">https://pan.baidu.com/s/1jfAtjMfutg9NjZclHhZr9w</a> 提取码: r3ia </p>
+<ul>
+<li>在windows系统用到的工具：TransMAC，DiskGenius，EasyUEFI</li>
+<li>在苹果系统中用到的工具：Clover Configurator等</li>
+</ul>
+<h4 id="引导"><a href="#引导" class="headerlink" title="引导"></a>引导</h4><p><strong>安装黑苹果最关键的一步，就是找到适合自己机型的EFI</strong></p>
+<ul>
+<li>这里是EFI机型大全，链接: <a href="https://pan.baidu.com/s/1jL7shH5joZxqYxaiE5uhKA" target="_blank" rel="noopener">https://pan.baidu.com/s/1jL7shH5joZxqYxaiE5uhKA</a> 提取码: aujw</li>
+<li>可以根据自己的机型，选择合适的EFI<ul>
+<li>比如自己的机型是 联想S410，查找 “联想” –&gt; S410就行</li>
+<li>不过这种方法找到的EFI，自己试过后都没有效果，应该是因为自己这台电脑的主板烧过，换了主板，处理器更换了</li>
+</ul>
+</li>
+<li><p>此外，还可以根据处理器与显卡查找</p>
+<ul>
+<li>右键此电脑 –&gt; 属性<br>查看自己的处理器属性，我的是 intel core i5-4210U</li>
+<li><p>右键此电脑 –&gt; 属性 –&gt; 设备管理器 –&gt; 显示适配器<br>查看自己的显卡型号，我的是 intel HD Graphics Family</p>
+<p><img src="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/EFI1.png" alt="EFI1.png"></p>
+<p>只能查看到自己的显卡是 intel系列的，不能查看具体的型号，比如 intel HD 6000；<br>由于我的显卡是核芯显卡，也就是说显卡是集成在处理器上的，可以通过官网查看处理器i5-4210U参数，获取显卡具体型号</p>
+<ul>
+<li>访问 <a href="https://www.intel.cn/content/www/cn/zh/support/detect.html" target="_blank" rel="noopener">https://www.intel.cn/content/www/cn/zh/support/detect.html</a>，扫描自己的系统<br>  <img src="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/EFI2.png" alt="EFI2.png"></li>
+<li><p>搜索 “i5-4210U”</p>
+<p>  <img src="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/EFI3.png" alt="EFI3.png"></p>
+<p>  <img src="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/EFI4.png" alt="EFI4.png"></p>
+<p>  <img src="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/EFI5.png" alt="EFI5.png"></p>
+</li>
+<li><p>可以看到，我的显卡是 intel HD 4400</p>
+</li>
+<li><p>于是我选择了 “联想 E40-70 i5 4210U HD4400”</p>
+<p>  <img src="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/EFI6.png" alt="EFI6.png"></p>
+</li>
+<li>经过测试，这个EFI完全可以适配这台电脑</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>安装时 EFI 选取不需要那么严苛，声卡、网卡等这些可以安装黑苹果完成后优化，安装黑苹果时着重注意的还是处理器与显卡是否能够驱动</p>
+</li>
+<li>怎么选取EFI就先讲到这里，由于自己手中的电脑是笔记本，所以台式机又有些不一样；如果是AMD的处理器，那么使用的系统镜像又不一样；还有，自己的显卡是核芯显卡，那么独立显卡也会有些不同，多爬爬教程，或者加入一些群聊，请教那些大佬</li>
+</ul>
+<h2 id="安装黑苹果"><a href="#安装黑苹果" class="headerlink" title="安装黑苹果"></a>安装黑苹果</h2><h3 id="制作黑苹果系统启动盘"><a href="#制作黑苹果系统启动盘" class="headerlink" title="制作黑苹果系统启动盘"></a>制作黑苹果系统启动盘</h3><h4 id="使用TransMac写入镜像"><a href="#使用TransMac写入镜像" class="headerlink" title="使用TransMac写入镜像"></a>使用TransMac写入镜像</h4><ol>
+<li>以管理员方式启动 TransMac</li>
+<li>准备一个U盘（如果安装10.15系统，最少需要16G），这里我是用的是刚刚的 w10 安装盘</li>
+<li><p>右键U盘，选择”Format Disk for Mac”，然后一路 “OK”</p>
+<p> <img src="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/U_Mojave1.png" alt="U_Mojave1.png"></p>
+</li>
+<li><p>右键U盘，选择”Restore with Disk Image”，选取下载的系统镜像</p>
+<p> <img src="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/U_Mojave2.png" alt="U_Mojave2.png"></p>
+</li>
+<li>等待写入完成</li>
+</ol>
+<h4 id="使用DiskGenius更改EFI"><a href="#使用DiskGenius更改EFI" class="headerlink" title="使用DiskGenius更改EFI"></a>使用DiskGenius更改EFI</h4><ol>
+<li>以管理员方式启动 DiskGenius</li>
+<li><p>选中U盘下EFI分区下的EFI文件夹</p>
+<p> <img src="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/U_Mojave3.png" alt="U_Mojave3.png"></p>
+</li>
+<li><p>右键 CLOVER文件夹 –&gt; 强制删除文件</p>
+<p> <img src="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/U_Mojave4.png" alt="U_Mojave4.png"></p>
+</li>
+<li><p>在适配自己机型的EFI文件夹中，复制 CLVOER文件夹</p>
+<p> <img src="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/U_Mojave5.png" alt="U_Mojave5.png"></p>
+</li>
+<li><p>使用ctrl+v，复制到U盘下的EFI分区中</p>
+<p> <img src="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/U_Mojave6.png" alt="U_Mojave6.png"></p>
+</li>
+<li>黑苹果启动盘制作完成</li>
+</ol>
+<h3 id="安装-Mojave"><a href="#安装-Mojave" class="headerlink" title="安装 Mojave"></a>安装 Mojave</h3><h4 id="将系统安装到硬盘"><a href="#将系统安装到硬盘" class="headerlink" title="将系统安装到硬盘"></a>将系统安装到硬盘</h4><ol>
+<li><p>插入黑苹果启动盘，重启电脑</p>
+</li>
+<li><p>按 Fn+F2 进入BIOS（因电脑型号而异），在 Security 选项中关闭 “Secure Boot”，不关闭的话，无法安装 Linux与黑苹果</p>
+<p> <img src="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/bios2.jpg" alt="bios2.jpg"></p>
+</li>
+<li><p>按 Fn+F12 选择启动项（因电脑型号而异），这里选择 “EFI USB Device”</p>
+<p> <img src="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/bios3.jpg" alt="bios3.jpg"></p>
+</li>
+<li><p>选择 “Boot macOS install from install macOS Mojave”</p>
+<p> <img src="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/install1.jpg" alt="install1.jpg"></p>
+</li>
+<li><p>等待进度条</p>
+<p> <img src="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/install2.jpg" alt="install2.jpg"></p>
+</li>
+<li><p><em>抹掉磁盘时一定要选择正确，否则数据不可找回</em></p>
+<p> 进度条完成后，进入到系统，选择”磁盘工具”</p>
+<p> <img src="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/install3.jpg" alt="install3.jpg"></p>
+<p> 选中我们刚刚为黑苹果新建的RAW分区 –&gt; 抹掉 –&gt; 输入名称 “MAC” –&gt; 选择格式 “APFS” –&gt; 点击 “抹掉” –&gt; 成功后退出</p>
+<p> <img src="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/install4.jpg" alt="install4.jpg"></p>
+</li>
+<li><p>选择 “安装 macOS”</p>
+<p> <img src="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/install5.jpg" alt="install5.jpg"></p>
+<p> 继续</p>
+<p> <img src="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/install6.jpg" alt="install6.jpg"></p>
+<p> 同意</p>
+<p> <img src="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/install7.jpg" alt="install7.jpg"></p>
+<p> 选中刚刚我们抹掉的磁盘 “MAC”</p>
+<p> <img src="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/install8.jpg" alt="install8.jpg"></p>
+<p> 等待安装完成</p>
+<p> <img src="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/install9.jpg" alt="install9.jpg"></p>
+</li>
+</ol>
+<h4 id="从硬盘安装系统"><a href="#从硬盘安装系统" class="headerlink" title="从硬盘安装系统"></a>从硬盘安装系统</h4><ol>
+<li><p>在将系统安装到硬盘后会自动重启，在引导界面，选择 “Boot macOS from MAC”</p>
+<p> <img src="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/install10.jpg" alt="install10.jpg"></p>
+<p> 等待几分钟</p>
+<p> <img src="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/install11.jpg" alt="install11.jpg"></p>
+</li>
+<li><p>安装成功后，系统会自动重启，在引导界面，仍然选择 “Boot macOS from MAC”，第一次启动会比较慢，等几分钟后，出现系统设置界面，以下是一些设置，其他默认即可</p>
+<p> <img src="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/install12.jpg" alt="install12.jpg"></p>
+<p> 设置键盘</p>
+<p> <img src="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/install13.jpg" alt="install13.jpg"></p>
+<p> 先不连接网络</p>
+<p> <img src="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/install14.jpg" alt="install14.jpg"></p>
+<p> 创建账户</p>
+<p> <img src="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/install15.jpg" alt="install15.jpg"></p>
+</li>
+<li><p>大功告成</p>
+<p> <img src="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/install16.jpg" alt="install16.jpg"></p>
+</li>
+</ol>
+<h3 id="设置引导"><a href="#设置引导" class="headerlink" title="设置引导"></a>设置引导</h3><p><em>这部分的主要目的是，拔下U盘后，能够启动到 Mac</em></p>
+<h4 id="将引导拷贝到-ESP-分区"><a href="#将引导拷贝到-ESP-分区" class="headerlink" title="将引导拷贝到 ESP 分区"></a>将引导拷贝到 ESP 分区</h4><ol>
+<li><p>找到你刚刚下载的 EFI文件夹，复制其中的 CLOVER文件夹</p>
+</li>
+<li><p>使用 DiskGenius，粘贴到 ESP 分区下的 EFI 文件夹中</p>
+<p> <img src="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/clover1.png" alt="clover1.png"></p>
+</li>
+</ol>
+<h4 id="添加启动项"><a href="#添加启动项" class="headerlink" title="添加启动项"></a>添加启动项</h4><ol>
+<li><p>管理员方式启动 Hasleo EasyUEFI</p>
+</li>
+<li><p>选择 “管理EFI启动项”</p>
+<p> <img src="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/clover2.png" alt="clover2.png"></p>
+</li>
+<li><p>选择 “创建新项”</p>
+<p> <img src="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/clover3.png" alt="clover3.png"></p>
+</li>
+<li><p>配置启动项</p>
+<p> <img src="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/clover4.png" alt="clover4.png"></p>
+<p> 选择 “浏览文件”</p>
+<p> <img src="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/clover5.png" alt="clover5.png"></p>
+</li>
+<li><p>确定后添加完成</p>
+</li>
+<li><p>调整启动项顺序，让我们刚刚添加的移动到第一个，使其优先启动</p>
+<p> <img src="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/clover6.png" alt="clover6.png"></p>
+</li>
+<li><p>重启电脑</p>
+<p> <img src="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/clover7.jpg" alt="clover7.jpg"></p>
+</li>
+</ol>
+<h2 id="问题列表"><a href="#问题列表" class="headerlink" title="问题列表"></a>问题列表</h2><h3 id="安装-macOS-时提示-“这个安装-macOS-Mojave应用程序副本已损坏，不能用来安装-macOS”"><a href="#安装-macOS-时提示-“这个安装-macOS-Mojave应用程序副本已损坏，不能用来安装-macOS”" class="headerlink" title="安装 macOS 时提示 “这个安装 macOS Mojave应用程序副本已损坏，不能用来安装 macOS”"></a>安装 macOS 时提示 “这个安装 macOS Mojave应用程序副本已损坏，不能用来安装 macOS”</h3><p><img src="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/problem1_1.jpg" alt="problem1_1.jpg"></p>
+<h4 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h4><p>这是因为苹果于 2016.02.14 更换证书导致，系统日期更改到这个时间之前即可</p>
+<h4 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h4><ol>
+<li><p>断网启动（如果没连接到网络，则不需要）</p>
+</li>
+<li><p>打开 “实用工具” –&gt; “终端”<br> <img src="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/problem1_2.jpg" alt="problem1_2.jpg"></p>
+</li>
+<li><p>输入: date 102723252015.06</p>
+<p> <img src="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/problem1_3.jpg" alt="problem1_3.jpg"></p>
+</li>
+<li><p>退出终端，重新选择 “安装 macOS”</p>
+<p> <img src="/2020/04/28/黑苹果安装 联想S410 i5-4210 HD4400/problem1_4.jpg" alt="problem1_4.jpg"></p>
+</li>
+</ol>
+
+      
+    </div>
+    <div>
+       
+          <div>
+	
+		<div style="text-align: center; color: #ccc; font-size: 14px;">
+			----------本文结束<i class="fa fa-paw"></i>感谢您的阅读----------
+		</div>
+	
+</div>
+
+       
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>小礼物走一走，坚持原创分享✊</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/upload/image/wechatpay.jpeg" alt="QIXQI 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/upload/image/alipay.png" alt="QIXQI 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/黑苹果/" rel="tag"><i class="fa fa-tag"></i> 黑苹果</a>
+          
+            <a href="/tags/Hackintosh/" rel="tag"><i class="fa fa-tag"></i> Hackintosh</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/04/28/数据库程序设计/" rel="next" title="数据库程序设计笔记">
+                <i class="fa fa-chevron-left"></i> 数据库程序设计笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!--MOB SHARE BEGIN-->
+<div class="-mob-share-ui-button -mob-share-open">分享</div>
+<div class="-mob-share-ui" style="display: none">
+    <ul class="-mob-share-list">
+        <li class="-mob-share-weibo"><p>新浪微博</p></li>
+        <li class="-mob-share-tencentweibo"><p>腾讯微博</p></li>
+        <li class="-mob-share-qzone"><p>QQ空间</p></li>
+        <li class="-mob-share-qq"><p>QQ好友</p></li>
+        <li class="-mob-share-renren"><p>人人网</p></li>
+        <li class="-mob-share-kaixin"><p>开心网</p></li>
+        <li class="-mob-share-douban"><p>豆瓣</p></li>
+        <li class="-mob-share-facebook"><p>Facebook</p></li>
+        <li class="-mob-share-twitter"><p>Twitter</p></li>
+    </ul>
+    <div class="-mob-share-close">取消</div>
+</div>
+<div class="-mob-share-ui-bg"></div>
+<script id="-mob-share" src="https://f1.webshare.mob.com/code/mob-share.js?appkey=2ae2af4b38d88"></script>
+<!--MOB SHARE END-->            
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/upload/image/portrait.jpeg" alt="QIXQI">
+            
+              <p class="site-author-name" itemprop="name">QIXQI</p>
+              <p class="site-description motion-element" itemprop="description">Keep fucking the world</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/QIXQI" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:zhengxiang4056@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/QIXXQI" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://youtube.com/channel/UCFSIKIR4wtROdR6B1ro58DQ" target="_blank" title="YouTube">
+                      
+                        <i class="fa fa-fw fa-youtube"></i>YouTube</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://gitee.com/QIXQI/" target="_blank" title="Gitee">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Gitee</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://instagram.com/qixxqi" target="_blank" title="Instagram">
+                      
+                        <i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons">
+              </a>
+            </div>
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.zhengxiang4056.club" title="小象study" target="_blank">小象study</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.github.com" title="Github" target="_blank">Github</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.telegram.org" title="Telegram" target="_blank">Telegram</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装前准备工作"><span class="nav-number">1.</span> <span class="nav-text">安装前准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#调整硬盘"><span class="nav-number">1.1.</span> <span class="nav-text">调整硬盘</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#制作老毛桃U盘启动盘"><span class="nav-number">1.1.1.</span> <span class="nav-text">制作老毛桃U盘启动盘</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#制作UEFI引导的w10启动盘"><span class="nav-number">1.1.2.</span> <span class="nav-text">制作UEFI引导的w10启动盘</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除硬盘分区"><span class="nav-number">1.1.3.</span> <span class="nav-text">删除硬盘分区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#更改硬盘模式为gpt-guid"><span class="nav-number">1.1.4.</span> <span class="nav-text">更改硬盘模式为gpt/guid</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#新建EFI-ESP分区"><span class="nav-number">1.1.5.</span> <span class="nav-text">新建EFI/ESP分区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#新建主分区"><span class="nav-number">1.1.6.</span> <span class="nav-text">新建主分区</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装w10-uefi"><span class="nav-number">1.2.</span> <span class="nav-text">安装w10+uefi</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装"><span class="nav-number">1.2.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#激活windows"><span class="nav-number">1.2.2.</span> <span class="nav-text">激活windows</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建RAW分区"><span class="nav-number">1.3.</span> <span class="nav-text">新建RAW分区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#准备安装黑苹果需要的镜像、工具、引导"><span class="nav-number">1.4.</span> <span class="nav-text">准备安装黑苹果需要的镜像、工具、引导</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#镜像"><span class="nav-number">1.4.1.</span> <span class="nav-text">镜像</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#工具"><span class="nav-number">1.4.2.</span> <span class="nav-text">工具</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引导"><span class="nav-number">1.4.3.</span> <span class="nav-text">引导</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装黑苹果"><span class="nav-number">2.</span> <span class="nav-text">安装黑苹果</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#制作黑苹果系统启动盘"><span class="nav-number">2.1.</span> <span class="nav-text">制作黑苹果系统启动盘</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用TransMac写入镜像"><span class="nav-number">2.1.1.</span> <span class="nav-text">使用TransMac写入镜像</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用DiskGenius更改EFI"><span class="nav-number">2.1.2.</span> <span class="nav-text">使用DiskGenius更改EFI</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-Mojave"><span class="nav-number">2.2.</span> <span class="nav-text">安装 Mojave</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#将系统安装到硬盘"><span class="nav-number">2.2.1.</span> <span class="nav-text">将系统安装到硬盘</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#从硬盘安装系统"><span class="nav-number">2.2.2.</span> <span class="nav-text">从硬盘安装系统</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置引导"><span class="nav-number">2.3.</span> <span class="nav-text">设置引导</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#将引导拷贝到-ESP-分区"><span class="nav-number">2.3.1.</span> <span class="nav-text">将引导拷贝到 ESP 分区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加启动项"><span class="nav-number">2.3.2.</span> <span class="nav-text">添加启动项</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题列表"><span class="nav-number">3.</span> <span class="nav-text">问题列表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-macOS-时提示-“这个安装-macOS-Mojave应用程序副本已损坏，不能用来安装-macOS”"><span class="nav-number">3.1.</span> <span class="nav-text">安装 macOS 时提示 “这个安装 macOS Mojave应用程序副本已损坏，不能用来安装 macOS”</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原因"><span class="nav-number">3.1.1.</span> <span class="nav-text">原因</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解决"><span class="nav-number">3.1.2.</span> <span class="nav-text">解决</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <!-- <i class="fa fa-user"></i> -->
+    <i class="fa fa-star"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">QIXQI</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    #
+    <span title="Site words total count">36.6k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'NIFragDNrfS3Q7Y5hukllbdt-9Nh9j0Va',
+        appKey: 'clll4OLyNnxCxuaUMizhdAfq',
+        placeholder: 'ヾﾉ≧∀≦)来啊，快活啊',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+  
+  
+    <script type="text/javascript" src="/js/src/love.js"></script>
+  
+  <script type="text/javascript" src="/js/src/particle.js" count="50" zindex="-2" opacity="0.8" color="0,104,183"></script>
+</body>
+</html>
